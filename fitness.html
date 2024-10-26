@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fitness - Lifestyle Vibes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ffffff;
+    }
+
+    .navbar {
+      background: linear-gradient(to bottom right, #724a1f, #28a745);
+      font-weight: bold;
+    }
+
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+
+    .hover-effect {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .hover-effect::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffc107;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .hover-effect:hover::after {
+      width: 80%;
+    }
+
+    .hover-effect:hover {
+      color: #ffc107 !important;
+    }
+
+    .subscribe-btn {
+      transition: transform 0.3s ease;
+    }
+
+    .subscribe-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+    .top-section {
+      background: url('fit.png') center/cover;
+      height: 300px;
+      position: relative;
+    }
+
+    .top-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .top-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .workout-card {
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .workout-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .workout-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .workout-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .workout-card .card-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .workout-card .card-text {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .workout-card ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .workout-card ul li {
+      padding: 0.5rem 0;
+      color: #555;
+      border-bottom: 1px solid #eee;
+    }
+
+    .workout-card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .tips-card {
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);
+      transition: transform 0.3s;
+      height: 100%;
+      background-color: #fff;
+    }
+
+    .tips-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tips-card h3 {
+      color: #28a745;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #28a745;
+    }
+
+    .tips-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .tips-card ul li {
+      padding: 10px 0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .tips-card ul li:before {
+      content: ">";
+      color: #28a745;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .section-title {
+      position: relative;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, #724a1f, #28a745);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Lifestyle Vibes</a>
+    <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="index.html">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="foods.html">Foods</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="fitness.html">Fitness</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="about.html">About</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item px-2 d-flex justify-content-center align-items-center">
+          <a class="btn btn-warning btn-sm text-white rounded-pill fw-bold px-3 subscribe-btn" href="#" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Top Section -->
+<div class="top-section d-flex align-items-center">
+  <div class="top-overlay"></div>
+  <div class="container top-content text-center">
+    <h1 class="display-4 fw-bold">Fitness Journey</h1>
+    <p class="lead">Transform your body and mind with our comprehensive fitness guides</p>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="container my-5">
+  <!-- Workout Categories -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="workout-card">
+        <img src="cardio.jpg" class="card-img-top" alt="Cardio Workouts">
+        <div class="card-body">
+          <h5 class="card-title">Cardio Workouts</h5>
+          <p class="card-text">Effective cardio exercises to boost your endurance and burn calories.</p>
+          <ul>
+            <li>Running</li>
+            <li>Cycling</li>
+            <li>Swimming</li>
+            <li>Jump Rope</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="workout-card">
+        <img src="strength.jpg" class="card-img-top" alt="Strength Training">
+        <div class="card-body">
+          <h5 class="card-title">Strength Training</h5>
+          <p class="card-text">Build muscle and increase strength with these exercises.</p>
+          <ul>
+            <li>Weight Lifting</li>
+            <li>Bodyweight Exercises</li>
+            <li>Resistance Training</li>
+            <li>Core Workouts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="workout-card">
+        <img src="flexibility.jpg" class="card-img-top" alt="Flexibility">
+        <div class="card-body">
+          <h5 class="card-title">Flexibility & Wellness</h5>
+          <p class="card-text">Improve flexibility and mental wellness through these activities.</p>
+          <ul>
+            <li>Yoga</li>
+            <li>Stretching</li>
+            <li>Pilates</li>
+            <li>Meditation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Fitness Tips Section -->
+  <section class="my-5">
+    <h2 class="text-center section-title">Fitness Tips</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="tips-card p-4">
+          <h3>Getting Started</h3>
+          <ul>
+            <li>Start slowly and build gradually</li>
+            <li>Stay hydrated throughout your workout</li>
+            <li>Warm up before exercising</li>
+            <li>Cool down after workouts</li>
+            <li>Listen to your body and rest when needed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="tips-card p-4">
+          <h3>Workout Schedule</h3>
+          <ul>
+            <li>Plan your workouts weekly</li>
+            <li>Include rest days for recovery</li>
+            <li>Mix different types of exercises</li>
+            <li>Track your progress consistently</li>
+            <li>Stay committed to your routine</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="text-center bg-light py-4">
+  <p>&copy; 2024 Lifestyle Vibes | Matthew Russel | 535230100</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<!-- Subscribe Modal -->
+<div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background: linear-gradient(to bottom right, #724a1f, #28a745); color: white;">
+        <h5 class="modal-title" id="subscribeModalLabel">Join Our Community</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background: linear-gradient(to bottom right, #724a1f, #28a745); color: white;">
+        <article class="text-center">
+          <hgroup class="mb-4">
+            <h2 class="h4 fw-bold">Subscribe for the latest lifestyle updates</h2>
+          </hgroup>
+          <form class="row justify-content-center g-3">
+            <div class="col-12">
+              <input
+                type="text"
+                id="modalFirstname"
+                name="firstname"
+                placeholder="First Name"
+                aria-label="First Name"
+                required
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="email"
+                id="modalEmail"
+                name="email"
+                placeholder="Email"
+                aria-label="Email"
+                required
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <button 
+                type="submit" 
+                onclick="event.preventDefault()" 
+                class="btn btn-warning text-white w-100 fw-bold"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

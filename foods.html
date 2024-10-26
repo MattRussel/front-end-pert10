@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthy Foods - Lifestyle Vibes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ffffff;
+    }
+
+    .navbar {
+      background: linear-gradient(to bottom right, #724a1f, #28a745);
+      font-weight: bold;
+    }
+
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+
+    .hover-effect {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .hover-effect::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffc107;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .hover-effect:hover::after {
+      width: 80%;
+    }
+
+    .hover-effect:hover {
+      color: #ffc107 !important;
+    }
+
+    .subscribe-btn {
+      transition: transform 0.3s ease;
+    }
+
+    .subscribe-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+    .top-section {
+      background: url('exercise-nutrition.jpg') center/cover;
+      height: 300px;
+      position: relative;
+    }
+
+    .top-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .top-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .workout-card {
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .workout-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .workout-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .workout-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .workout-card .card-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .workout-card .card-text {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .workout-card ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .workout-card ul li {
+      padding: 0.5rem 0;
+      color: #555;
+      border-bottom: 1px solid #eee;
+    }
+
+    .workout-card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .nutrition-card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);
+      height: 100%;
+      transition: transform 0.3s;
+    }
+
+    .nutrition-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .nutrition-card h3 {
+      color: #28a745;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #28a745;
+    }
+
+    .nutrition-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    .nutrition-card ul li {
+      padding: 8px 0;
+      color: #555;
+      display: flex;
+      align-items: center;
+    }
+
+    .nutrition-card ul li:before {
+      content: ">";
+      color: #28a745;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .section-title {
+      position: relative;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      color: #333;
+      text-align: center;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, #724a1f, #28a745);
+    }
+
+    .meal-planning-section {
+      padding: 3rem 0;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Lifestyle Vibes</a>
+    <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="index.html">Home</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="foods.html">Foods</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="fitness.html">Fitness</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="about.html">About</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link hover-effect" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item px-2 d-flex justify-content-center align-items-center">
+          <a class="btn btn-warning btn-sm text-white rounded-pill fw-bold px-3 subscribe-btn" href="#" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Top Section -->
+<div class="top-section d-flex align-items-center">
+  <div class="top-overlay"></div>
+  <div class="container top-content text-center">
+    <h1 class="display-4 fw-bold">Healthy Eating Guide</h1>
+    <p class="lead">Discover nutritious recipes and dietary tips for a healthier lifestyle</p>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="container my-5">
+  <h2 class="section-title">Healthy Food Categories</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="workout-card">
+        <img src="vegetables.jpg" class="card-img-top" alt="Vegetables">
+        <div class="card-body">
+          <h5 class="card-title">Fresh Vegetables</h5>
+          <p class="card-text">Essential nutrients and vitamins for a healthy diet.</p>
+          <ul>
+            <li>Leafy Greens</li>
+            <li>Root Vegetables</li>
+            <li>Cruciferous Vegetables</li>
+            <li>Colorful Peppers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="workout-card">
+        <img src="fruits.jpg" class="card-img-top" alt="Fruits">
+        <div class="card-body">
+          <h5 class="card-title">Seasonal Fruits</h5>
+          <p class="card-text">Natural sweetness and antioxidants for your daily needs.</p>
+          <ul>
+            <li>Citrus Fruits</li>
+            <li>Berries</li>
+            <li>Tropical Fruits</li>
+            <li>Stone Fruits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="workout-card">
+          <img src="protein.jpg" class="card-img-top" alt="Protein">
+          <div class="card-body">
+            <h5 class="card-title">Protein Sources</h5>
+            <p class="card-text">Essential proteins for muscle health and recovery.</p>
+            <ul>
+              <li>Lean Meats</li>
+              <li>Fish & Seafood</li>
+              <li>Legumes & Beans</li>
+              <li>Eggs & Dairy</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Nutrition Tips Section -->
+  <section class="my-5">
+    <h2 class="section-title">Nutrition Guide</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="nutrition-card">
+          <h3>Balanced Diet Tips</h3>
+          <ul>
+            <li>Eat a variety of fruits and vegetables daily</li>
+            <li>Include lean proteins in every meal</li>
+            <li>Choose whole grains over refined grains</li>
+            <li>Stay hydrated with water throughout the day</li>
+            <li>Limit processed foods and added sugars</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="nutrition-card">
+          <h3>Meal Planning Strategies</h3>
+          <ul>
+            <li>Prepare meals in advance</li>
+            <li>Create a weekly shopping list</li>
+            <li>Practice portion control</li>
+            <li>Include a variety of nutrients</li>
+            <li>Plan for healthy snacks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meal Planning Section -->
+  <section class="meal-planning-section">
+    <div class="container">
+      <h2 class="section-title">Weekly Meal Planning</h2>
+      <div class="row g-4">
+        <div class="col-md-12">
+          <div class="nutrition-card">
+            <h3>Tips for Successful Meal Planning</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <ul>
+                  <li>Start with a weekly calendar</li>
+                  <li>Consider your schedule</li>
+                  <li>Make a detailed grocery list</li>
+                  <li>Prep ingredients in advance</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Use leftovers wisely</li>
+                  <li>Keep healthy snacks available</li>
+                  <li>Balance your nutrients</li>
+                  <li>Stay flexible with your plan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Tips Section -->
+  <section class="my-5">
+    <h2 class="section-title">Healthy Eating Habits</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="nutrition-card">
+          <h3>Daily Nutrition Goals</h3>
+          <ul>
+            <li>Eat at regular intervals</li>
+            <li>Control portion sizes</li>
+            <li>Listen to your body's hunger cues</li>
+            <li>Choose nutrient-dense foods</li>
+            <li>Maintain proper hydration</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="nutrition-card">
+          <h3>Smart Shopping Tips</h3>
+          <ul>
+            <li>Shop the perimeter of the store first</li>
+            <li>Read nutrition labels carefully</li>
+            <li>Buy seasonal produce</li>
+            <li>Compare prices per unit</li>
+            <li>Avoid shopping when hungry</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="text-center bg-light py-4">
+  <p>&copy; 2024 Lifestyle Vibes | Matthew Russel | 535230100</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<!-- Subscribe Modal -->
+<div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background: linear-gradient(to bottom right, #724a1f, #28a745); color: white;">
+        <h5 class="modal-title" id="subscribeModalLabel">Join Our Community</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background: linear-gradient(to bottom right, #724a1f, #28a745); color: white;">
+        <article class="text-center">
+          <hgroup class="mb-4">
+            <h2 class="h4 fw-bold">Subscribe for the latest lifestyle updates</h2>
+          </hgroup>
+          <form class="row justify-content-center g-3">
+            <div class="col-12">
+              <input
+                type="text"
+                id="modalFirstname"
+                name="firstname"
+                placeholder="First Name"
+                aria-label="First Name"
+                required
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="email"
+                id="modalEmail"
+                name="email"
+                placeholder="Email"
+                aria-label="Email"
+                required
+                class="form-control"
+              />
+            </div>
+            <div class="col-12">
+              <button 
+                type="submit" 
+                onclick="event.preventDefault()" 
+                class="btn btn-warning text-white w-100 fw-bold"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
